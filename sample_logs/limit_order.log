@@ -1,0 +1,5 @@
+2026-05-01 03:53:26,678 - INFO - Binance Futures Testnet client initialized.
+2026-05-01 03:53:26,679 - INFO - OrderManager received order: symbol=BTCUSDT, side=BUY, order_type=LIMIT, quantity=0.001, price=50000.0
+2026-05-01 03:53:26,679 - INFO - Sending LIMIT order request: symbol=BTCUSDT, side=BUY, quantity=0.001, price=50000.0
+2026-05-01 03:53:27,770 - INFO - LIMIT order response: {'orderId': 13096099687, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJe0bb91c95380effad6cb6', 'price': '50000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1777629207704}
+2026-05-01 03:53:27,773 - INFO - Order placed successfully.
