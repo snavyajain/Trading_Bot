@@ -1,46 +1,21 @@
 # Binance Futures Testnet Trading Bot
 
-This is a small Python command-line bot for placing orders on Binance Futures Testnet. It supports MARKET and LIMIT orders and works with both BUY and SELL sides.
+This is a simple Python trading bot that runs from the command line. It places MARKET and LIMIT orders on Binance Futures Testnet and supports both BUY and SELL.
 
-I made this project for the Python Developer Intern assignment. The main goal was to keep it simple, readable, and easy to run, while still including input validation, logging, and error handling.
+I made this for the Python Developer Intern assignment.
 
-## What it does
+## Features
 
-- Places MARKET orders
-- Places LIMIT orders
-- Supports BUY and SELL
-- Takes input from the command line
-- Validates user input before placing an order
-- Prints order request and response details
-- Saves logs for requests, responses, and errors
-- Loads API keys from a `.env` file instead of hardcoding them
+- MARKET and LIMIT orders
+- BUY and SELL support
+- Command-line input
+- Basic input validation
+- Logs requests, responses, and errors
+- API keys are loaded from a `.env` file
 
 ## Setup
 
-First, download or clone the project.
-
-```bash
-git clone your_repository_link_here
-cd "Trading Bot"
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-Activate it on Mac/Linux:
-
-```bash
-source venv/bin/activate
-```
+After downloading or importing the code, open the main project folder in the terminal.
 
 Install the required packages:
 
@@ -48,100 +23,31 @@ Install the required packages:
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in the main project folder and add your Binance Futures Testnet API keys:
+Create a `.env` file in the main folder and add your Binance Futures Testnet API keys:
 
 ```env
 BINANCE_API_KEY=your_api_key_here
 BINANCE_API_SECRET=your_secret_key_here
 ```
 
-The `.env` file should not be uploaded to GitHub.
+## How to use
 
-## How to run
+Run the bot from the main project folder.
 
-Run all commands from the main project folder.
-
-To check the available command options:
-
-```bash
-python -m bot.cli --help
-```
-
-Example MARKET BUY order:
+For example, a MARKET order can be placed like this:
 
 ```bash
 python -m bot.cli --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
 ```
 
-Example MARKET SELL order:
+For a LIMIT order, use the same command format but set the type to `LIMIT` and include a price.
 
-```bash
-python -m bot.cli --symbol BTCUSDT --side SELL --type MARKET --quantity 0.001
-```
-
-Example LIMIT BUY order:
-
-```bash
-python -m bot.cli --symbol BTCUSDT --side BUY --type LIMIT --quantity 0.001 --price 50000
-```
-
-Example LIMIT SELL order:
-
-```bash
-python -m bot.cli --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 90000
-```
-
-## Example output
-
-```
-ORDER REQUEST SUMMARY
---------------------------------------------
-Symbol      : BTCUSDT
-Side        : BUY
-Order Type  : MARKET
-Quantity    : 0.001
-
-
-ORDER RESPONSE DETAILS
----------------------------------------------
-Order ID       : 123456789
-Status         : NEW
-Executed Qty   : 0.001
-Average Price  : 0.00
-
-SUCCESS: Order placed successfully.
-```
+You can change the symbol, side, order type, quantity, and price based on the order you want to place.
 
 ## Logs
 
-The bot creates a log file while running:
-
-```text
-logs/trading_bot.log
-```
-
-For the assignment submission, I also included sample logs for one MARKET order and one LIMIT order in the `sample_logs` folder.
-
-The logs include the order request, the API response, and any errors if something goes wrong.
-
-## Error handling
-
-The bot checks for common input mistakes before sending an order request.
-
-For example, it handles:
-
-- Invalid side, such as something other than BUY or SELL
-- Invalid order type, such as something other than MARKET or LIMIT
-- Missing price for a LIMIT order
-- Quantity less than or equal to zero
-- Missing API credentials
-- Binance API errors
-- Network or request errors
+The bot saves logs in the `logs` folder. I have also included sample logs for one MARKET order and one LIMIT order in the `sample_logs` folder.
 
 ## Notes
 
-This project is only for Binance Futures Testnet. It uses USDT-M Futures symbols such as `BTCUSDT`.
-
-LIMIT orders use `GTC` as the time in force.
-
-API keys are stored locally in a `.env` file and are not pushed to GitHub.
+This project is only for Binance Futures Testnet. LIMIT orders use `GTC` as the time in force. The `.env` file is not pushed to GitHub.
